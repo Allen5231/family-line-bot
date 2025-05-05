@@ -1,15 +1,14 @@
 require('dotenv').config();
 const express = require('express');
-const app = express();
-const line = require('@line/bot-sdk');
+const line = require('@line/bot-sdk'); // 要先載入 line
 
-// 用來儲存機密的設定（後面我們會用 .env 或 Railway 來放）
 const config = {
   channelAccessToken: process.env.LINE_ACCESS_TOKEN,
   channelSecret: process.env.LINE_CHANNEL_SECRET
 };
 
 const client = new line.Client(config);
+const app = express();
 
 app.use(express.json());
 
