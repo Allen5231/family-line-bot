@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const line = require('@line/bot-sdk'); // 要先載入 line
+console.log('access token:', process.env.LINE_ACCESS_TOKEN);
 
 const config = {
   channelAccessToken: process.env.LINE_ACCESS_TOKEN,
